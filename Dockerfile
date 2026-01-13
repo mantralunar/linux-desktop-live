@@ -13,7 +13,10 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends \
     novnc \
     websockify \
     x11-apps \
-    firefox-esr
+    firefox-esr \
+    pipx 
+
+RUN pipx install uv
 
 WORKDIR /app
 
