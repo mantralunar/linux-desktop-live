@@ -55,6 +55,22 @@ mediainfo
     
 RUN pipx install uv && pipx ensurepath
 
+RUN wget https://www.bok.net/Bento4/binaries/Bento4-SDK-1-6-0-641.x86_64-unknown-linux.zip && \
+    unzip -j Bento4-SDK-1-6-0-641.x86_64-unknown-linux.zip \
+    'Bento4-SDK-1-6-0-641.x86_64-unknown-linux/bin/*' -d /root/.local/bin/ && \
+    rm Bento4-SDK-1-6-0-641.x86_64-unknown-linux.zip && \
+    chmod +x /root/.local/bin/*
+
+RUN wget https://github.com/nilaoda/N_m3u8DL-RE/releases/download/v0.5.1-beta/N_m3u8DL-RE_v0.5.1-beta_linux-x64_20251029.tar.gz && \
+    tar N_m3u8DL-RE_v0.5.1-beta_linux-x64_20251029.tar.gz && \
+    find . -name "N_m3u8DL-RE" -type f -exec mv {} /root/.local/bin/ \; && \
+    rm N_m3u8DL-RE_v0.5.1-beta_linux-x64_20251029.tar.gz
+    chmod +x /root/.local/bin/*
+
+RUN wget https://github.com/shaka-project/shaka-packager/releases/download/v3.4.2/packager-linux-x64 && \
+    mv packager-linux-x64 /root/.local/bin/shaka-packager && \
+    chmod +x /root/.local/bin/*
+
 WORKDIR /app
 
 COPY entrypoint.sh /app/entrypoint.sh
