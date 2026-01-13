@@ -54,11 +54,9 @@ mediainfo
     
 RUN pipx install uv && pipx ensurepath
 
-RUN wget https://www.deb-multimedia.org/pool/main/c/ccextractor-dmo/ccextractor_0.94-dmo9_amd64.deb && \
-    apt-get update && \
-    apt-get install -y ./ccextractor_0.94-dmo9_amd64.deb && \
-    rm ccextractor_0.94-dmo9_amd64.deb && \
-    rm -rf /var/lib/apt/lists/*
+RUN wget https://github.com/CCExtractor/ccextractor/releases/download/v0.96.5/ccextractor-x86_64.AppImage && \
+    mv ccextractor-x86_64.AppImage /root/.local/bin/ccextractor && \
+    chmod +x /root/.local/bin/*
 
 RUN wget https://www.bok.net/Bento4/binaries/Bento4-SDK-1-6-0-641.x86_64-unknown-linux.zip && \
     unzip -j Bento4-SDK-1-6-0-641.x86_64-unknown-linux.zip \
