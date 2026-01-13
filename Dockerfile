@@ -13,6 +13,7 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends \
     novnc \
     websockify \
     x11-apps \
+    git \
     pipx 
 
 RUN pipx install uv
