@@ -53,7 +53,7 @@ libxkbcommon-x11-0 \
 libdbus-1-3 \
 mediainfo
     
-RUN pipx install uv
+RUN pipx install uv && pipx ensurepath
 
 WORKDIR /app
 
