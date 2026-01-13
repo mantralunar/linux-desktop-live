@@ -55,7 +55,7 @@ mediainfo
 RUN pipx install uv && pipx ensurepath
 
 RUN set -eux; \
-    sed -i 's/ main$/ main contrib non-free non-free-firmware/' /etc/apt/sources.list; \
+    sed -i -E 's/^(Components:.*)$/\1 contrib non-free non-free-firmware/' /etc/apt/sources.list.d/debian.sources; \
     apt-get update; \
     apt-get install -y --no-install-recommends \
         intel-media-va-driver-non-free \
