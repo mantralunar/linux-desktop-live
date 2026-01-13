@@ -15,6 +15,7 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends \
     x11-apps \
     git \
     ffmpeg \
+    mkvtoolnix \
     pipx 
 
 RUN pipx install uv
