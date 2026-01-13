@@ -1,6 +1,6 @@
 FROM mirror.gcr.io/library/debian:13-slim
 
-COPY debian.sources /etc/apt/sources.list.d/debian.sources
+COPY debian.sources /etc/apt/sources.list.d/nonfree-debian.sources
 
 RUN apt-get update -y && apt-get install -y --no-install-recommends \
 curl \
