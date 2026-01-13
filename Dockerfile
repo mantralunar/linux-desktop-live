@@ -54,6 +54,13 @@ mediainfo
     
 RUN pipx install uv && pipx ensurepath
 
+RUN set -eux; \
+    sed -i 's/ main$/ main contrib non-free non-free-firmware/' /etc/apt/sources.list; \
+    apt-get update; \
+    apt-get install -y --no-install-recommends \
+        intel-media-va-driver-non-free \
+    rm -rf /var/lib/apt/lists/*
+
 RUN echo "deb http://www.deb-multimedia.org trixie main" >> /etc/apt/sources.list \
  && apt-get update -o Acquire::AllowInsecureRepositories=true \
  && apt-get install -y --allow-unauthenticated --no-install-recommends deb-multimedia-keyring \
