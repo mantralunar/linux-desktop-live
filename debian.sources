@@ -5,11 +5,11 @@ Suites: trixie trixie-updates
 ## add " contrib non-free" after "non-free-firmware":
 Components: main non-free-firmware contrib non-free
 Enabled: yes
-Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
+Signed-By: /usr/share/keyrings/debian-archive-keyring.pgp
 
 Types: deb deb-src
 URIs: https://security.debian.org/debian-security
 Suites: trixie-security
 Components: main non-free-firmware contrib non-free
 Enabled: yes
-Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
+Signed-By: /usr/share/keyrings/debian-archive-keyring.pgp
