@@ -14,6 +14,7 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends \
     websockify \
     x11-apps \
     git \
+    ffmpeg \
     pipx 
 
 RUN pipx install uv
