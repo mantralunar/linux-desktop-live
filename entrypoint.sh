@@ -30,9 +30,5 @@ echo "VNC server started on port 5900"
 websockify --web /usr/share/novnc/ 3001 localhost:5900 &
 echo "noVNC viewable at http://localhost:3001"
 
-xeyes &
-xclock &
-firefox-esr startpage.com &
-
 # Keep the container running
 while true; do sleep 1; done
