@@ -4,7 +4,7 @@ FROM mirror.gcr.io/library/debian:13-slim
 RUN apt-get update -y && apt-get install -y --no-install-recommends \
 curl \
 ca-certificates \
-xterm \
+kitty \
 xvfb \
 x11vnc \
 xfce4 \
@@ -12,7 +12,6 @@ xfce4-goodies \
 dbus-x11 \
 novnc \
 websockify \
-x11-apps \
 libegl1 \
 git \
 ffmpeg \
