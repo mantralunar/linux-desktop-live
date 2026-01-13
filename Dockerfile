@@ -56,7 +56,7 @@ RUN pipx install uv && pipx ensurepath
 
 RUN echo "deb http://www.deb-multimedia.org trixie main" >> /etc/apt/sources.list \
  && apt-get update -o Acquire::AllowInsecureRepositories=true \
- && apt-get install -y --no-install-recommends deb-multimedia-keyring \
+ && apt-get install -y --allow-unauthenticated --no-install-recommends deb-multimedia-keyring \
  && apt-get update \
  && apt-get install -y --no-install-recommends ccextractor \
  && rm -rf /var/lib/apt/lists/*
