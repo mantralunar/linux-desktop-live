@@ -63,7 +63,7 @@ RUN wget https://www.bok.net/Bento4/binaries/Bento4-SDK-1-6-0-641.x86_64-unknown
 
 RUN wget https://github.com/nilaoda/N_m3u8DL-RE/releases/download/v0.5.1-beta/N_m3u8DL-RE_v0.5.1-beta_linux-x64_20251029.tar.gz && \
     tar -xzf N_m3u8DL-RE_v0.5.1-beta_linux-x64_20251029.tar.gz -C /root/.local/bin/ && \
-    rm N_m3u8DL-RE_v0.5.1-beta_linux-x64_20251029.tar.gz
+    rm N_m3u8DL-RE_v0.5.1-beta_linux-x64_20251029.tar.gz && \
     chmod +x /root/.local/bin/*
 
 RUN wget https://github.com/shaka-project/shaka-packager/releases/download/v3.4.2/packager-linux-x64 && \
