@@ -50,7 +50,6 @@ libxrender1 \
 libgomp1 \
 libxkbcommon-x11-0 \
 libdbus-1-3 \
-ccextractor \
 mediainfo
     
 RUN pipx install uv && pipx ensurepath
