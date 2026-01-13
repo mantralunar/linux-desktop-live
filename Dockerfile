@@ -1,5 +1,6 @@
 FROM mirror.gcr.io/library/debian:13-slim
 
+COPY debian.sources /etc/apt/sources.list.d/debian.sources
 
 RUN apt-get update -y && apt-get install -y --no-install-recommends \
 curl \
@@ -50,16 +51,11 @@ libxrender1 \
 libgomp1 \
 libxkbcommon-x11-0 \
 libdbus-1-3 \
-mediainfo
+mediainfo \
+vainfo \
+intel-media-va-driver-non-free
     
 RUN pipx install uv && pipx ensurepath
-
-RUN set -eux; \
-    sed -i -E 's/^(Components:.*)$/\1 contrib non-free non-free-firmware/' /etc/apt/sources.list.d/debian.sources; \
-    apt-get update; \
-    apt-get install -y --no-install-recommends \
-        intel-media-va-driver-non-free \
-    rm -rf /var/lib/apt/lists/*
 
 RUN echo "deb http://www.deb-multimedia.org trixie main" >> /etc/apt/sources.list \
  && apt-get update -o Acquire::AllowInsecureRepositories=true \
