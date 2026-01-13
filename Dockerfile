@@ -13,6 +13,7 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends \
     novnc \
     websockify \
     x11-apps \
+    libegl1 \
     git \
     ffmpeg \
     mkvtoolnix \
