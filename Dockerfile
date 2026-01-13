@@ -53,7 +53,7 @@ libxkbcommon-x11-0 \
 libdbus-1-3 \
 mediainfo \
 vainfo \
-intel-media-va-driver-non-free
+intel-media-driver-non-free
     
 RUN pipx install uv && pipx ensurepath
 
