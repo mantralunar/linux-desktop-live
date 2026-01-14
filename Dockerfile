@@ -1,7 +1,6 @@
 FROM mirror.gcr.io/library/debian:13-slim
 
 RUN sed -i '5s/$/ contrib non-free non-free-firmware/;12s/$/ contrib non-free non-free-firmware/'  /etc/apt/sources.list.d/debian.sources
-#COPY debian.sources /etc/apt/sources.list.d/debian.sources
 
 RUN apt-get update -y && apt-get install -y --no-install-recommends \
 curl \
@@ -57,13 +56,6 @@ vainfo \
 intel-media-va-driver-non-free
 
 RUN pipx install uv && pipx ensurepath
-
-RUN echo "deb http://www.deb-multimedia.org trixie main" >> /etc/apt/sources.list \
- && apt-get update -o Acquire::AllowInsecureRepositories=true \
- && apt-get install -y --allow-unauthenticated --no-install-recommends deb-multimedia-keyring \
- && apt-get update \
- && apt-get install -y --no-install-recommends ccextractor \
- && rm -rf /var/lib/apt/lists/*
 
 RUN wget https://www.bok.net/Bento4/binaries/Bento4-SDK-1-6-0-641.x86_64-unknown-linux.zip && \
     unzip -j Bento4-SDK-1-6-0-641.x86_64-unknown-linux.zip \
